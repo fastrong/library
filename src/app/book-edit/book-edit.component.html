@@ -15,6 +15,7 @@
     <label class="col-sm-2 col-form-label text-right" for="author">Author</label>
     <div class="col-sm-5">
       <select formControlName="author" ngModel type="text" class="form-control" id="author" name='author'>
+	<option value="" disabled hidden >Select author</option>
         <option *ngFor="let author of authors" value="{{author.id}}">{{author.givenName}} {{author.surName}}</option>
       </select>
       <ng-container *ngIf='bookForm.controls.author.errors !== null && bookForm.controls.author.dirty'>
