@@ -8,8 +8,9 @@ app.use( bodyParser.json() )
 app.use( bodyParser.urlencoded( { extended : false } ) )
 app.use( express.static( path.join( __dirname, "dist" ) ) )
 app.get( "*", ( req, res ) => {
-	res.sendFile( path.join( __dirname, 'index.html' ) )
+	res.sendFile( path.join( __dirname, 'src/index.html' ) )
 })
 var server = http.createServer( app )
-server.listen( 8080, () => console.log( "Listening at 8080" ) )
+var port = 8080
+server.listen( port, () => console.log( `Listening at ${ port }` ) )
 
