@@ -1,0 +1,13 @@
+.card{
+  max-width: 50rem !important;
+  margin: 1rem !important;
+}
+.tblhold{
+  margin: 1rem !important;
+}
+.authorx .card-title{
+  margin-bottom: 0 !important;
+}
+.tblhold td, .tblhold th{
+  padding: .3rem 2rem  !important;
+}

@@ -1,0 +1,94 @@
+<form [formGroup]="bookForm" novalidate class="container containerx" (submit)="save($event)">
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label text-right" for="ISBN">ISBN</label>
+    <div class="col-sm-5">
+      <input autofocus formControlName="ISBN" type="text" class="form-control" id="ISBN" name='ISBN' placeholder="Enter ISBN" [ngClass] = "{
+        'is-invalid' : bookForm.controls.ISBN.invalid && bookForm.controls.ISBN.dirty,
+        'is-valid' : bookForm.controls.ISBN.valid && bookForm.controls.ISBN.dirty
+      }">
+      <ng-container *ngIf='bookForm.controls.ISBN.errors !== null && bookForm.controls.ISBN.dirty'>
+        <div class='invalid-feedback' *ngIf='bookForm.controls.ISBN.errors.required'>ISBN is required</div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label text-right" for="author">Author</label>
+    <div class="col-sm-5">
+      <select formControlName="author" ngModel type="text" class="form-control" id="author" name='author'>
+        <option *ngFor="let author of authors" value="{{author.id}}">{{author.givenName}} {{author.surName}}</option>
+      </select>
+      <ng-container *ngIf='bookForm.controls.author.errors !== null && bookForm.controls.author.dirty'>
+        <div class='invalid-feedback' *ngIf='bookForm.controls.author.errors.required'>Author is required</div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label text-right" for="title">Title</label>
+    <div class="col-sm-5">
+      <input formControlName="title" type="text" class="form-control" id="title" name='title' placeholder="Enter title" [ngClass] = "{
+        'is-invalid' : bookForm.controls.title.invalid && bookForm.controls.title.dirty,
+        'is-valid' : bookForm.controls.title.valid && bookForm.controls.title.dirty
+      }">
+      <ng-container *ngIf='bookForm.controls.title.errors !== null && bookForm.controls.title.dirty'>
+        <div class='invalid-feedback' *ngIf='bookForm.controls.title.errors.required'>Title is required</div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label text-right" for="publishingDate">Publishing date</label>
+    <div class="col-sm-5">
+      <input formControlName="publishingDate" type="text" class="form-control" id="publishingDate" name='publishingDate' placeholder="Enter publishing date" >
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label text-right" for="edition">Edition</label>
+    <div class="col-sm-5">
+      <input formControlName="edition" type="text" class="form-control" id="edition" name='edition' placeholder="Enter edition" >
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label text-right" for="publisher">Publisher</label>
+    <div class="col-sm-5">
+      <input formControlName="publisher" type="text" class="form-control" id="publisher" name='publisher' placeholder="Enter publisher" >
+    </div>
+  </div>
+  <div formArrayName="chapters">
+    <div class="chapterx" *ngFor="let chapter of bookForm.controls.chapters.controls; let i = index">
+      <div [formGroupName]="i">
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label text-right">Chapter {{ i + 1 }} <i style="cursor:pointer; margin-left:10px;" (click)="removeChapter(i)" class="far fa-trash-alt"></i></label>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label text-right" for="title">Title</label>
+          <div class="col-sm-4">
+            <input [ngClass] = "{
+              'is-invalid' : bookForm.controls.chapters.controls[ i ].invalid && bookForm.controls.chapters.controls[ i ].dirty,
+              'is-valid' : bookForm.controls.chapters.controls[ i ].valid && bookForm.controls.chapters.controls[ i ].dirty
+            }" formControlName="title" type="text" name='title' class="form-control" placeholder="Enter chapter title" >
+            <ng-container *ngIf='bookForm.controls.chapters.controls[ i ].errors !== null && bookForm.controls.chapters.controls[ i ].dirty'>
+              <div class='invalid-feedback' *ngIf='bookForm.controls.chapters.controls[ i ].errors.required'>Chapter title is required</div>
+            </ng-container>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label text-right" for="chapter">Start page</label>
+          <div class="col-sm-4">
+            <input formControlName="startPage" type="text" class="form-control" placeholder="Enter start page" >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label text-right" for="chapter">Number of pages</label>
+          <div class="col-sm-4">
+            <input formControlName="numberOfPages" type="text" class="form-control" placeholder="Enter number of pages" >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-7 text-right">
+      <button class="btn btn-dark" (click)="addChapter($event)" >Add chapter <i class="fas fa-plus"></i></button>
+      <button [disabled]="!bookForm.valid" type="submit" class="btn btn-primary">Save <i class="far fa-save"></i></button>
+    </div>
+  </div>
+</form>

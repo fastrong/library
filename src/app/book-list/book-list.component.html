@@ -1,0 +1,10 @@
+<ul class="list-group">
+  <li class="list-group-item bookItem" *ngFor="let book of books; let i = index;">
+    <span>{{book.title}}</span>
+    <span class='btnsx'>
+      <button routerLink="/bookView/{{book.id}}" class="btnx btn btn-info" ><i class="fas fa-info"></i></button>
+      <button routerLink="/bookEdit/{{book.id}}" class="btnx btn btn-dark" ><i class="fas fa-pencil-alt"></i></button>
+      <button (click)="removeBook( i )" class="btnx btn btn-danger" ><i class="far fa-trash-alt"></i></button>
+    </span>
+  </li>
+</ul>

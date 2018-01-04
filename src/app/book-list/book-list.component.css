@@ -1,0 +1,10 @@
+.btnx{
+  cursor:pointer;
+  min-width: 50px;
+}
+.btnsx{
+  float:right;
+}
+.bookItem{
+  line-height: 34px;
+}

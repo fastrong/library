@@ -1,0 +1,11 @@
+.containerx{
+  margin-top: 15px;
+}
+#publishingDate{
+  background-color: white !important;
+  cursor: pointer;
+}
+.chapter.card{
+  display: inline-block;
+  margin: 15px;
+}

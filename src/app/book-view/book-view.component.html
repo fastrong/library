@@ -1,0 +1,78 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{book.title}}</h1>
+    <p class="lead">{{book.author.givenName}} {{book.author.surName}}</p>
+  </div>
+</div>
+<div class="authorx card border-dark mb-3">
+  <div class="card-header">Author</div>
+  <div class="card-body text-dark">
+    <table class="table table-sm">
+      <tbody>
+        <tr>
+          <td><h5 class="card-title">id</h5></td>
+          <td><p class="card-text">{{book.author.id}}</p></td>
+        </tr>
+        <tr>
+          <td><h5 class="card-title">First name</h5></td>
+          <td><p class="card-text">{{book.author.givenName}}</p></td>
+        </tr>
+        <tr>
+          <td><h5 class="card-title">Last name</h5></td>
+          <td><p class="card-text">{{book.author.surName}}</p></td>
+        </tr>
+        <tr>
+          <td><h5 class="card-title">Birth date</h5></td>
+          <td><p class="card-text">{{book.author.dateOfBirth | date: 'dd MMM yyyy'}}</p></td>
+        </tr>
+        <tr>
+          <td><h5 class="card-title">Bio</h5></td>
+          <td><p class="card-text">{{book.author.bio}}</p></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div *ngIf="book.chapters.length > 0" class='tblhold'>
+  <table class="table table-sm">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Start page</th>
+        <th scope="col">Total pages</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let chap of book.chapters">
+        <th scope="row">{{chap.title}}</th>
+        <td>{{chap.startPage}}</td>
+        <td>{{chap.numberOfPages}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="card text-white bg-info mb-3">
+  <div class="card-header">Book info</div>
+  <div class="card-body">
+    <table class="table table-sm">
+      <tbody>
+        <tr>
+          <td><h5 class="card-title">Publisher</h5></td>
+          <td><p class="card-text">{{book.publisher}}</p></td>
+        </tr>
+        <tr>
+          <td><h5 class="card-title">Edition</h5></td>
+          <td><p class="card-text">{{book.edition}}</p></td>
+        </tr>
+        <tr>
+          <td><h5 class="card-title">ISBN</h5></td>
+          <td><p class="card-text">{{book.ISBN}}</p></td>
+        </tr>
+        <tr>
+          <td><h5 class="card-title">Publishing date</h5></td>
+          <td><p class="card-text">{{book.publishingDate | date: 'dd MMM yyyy'}}</p></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
