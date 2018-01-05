@@ -1,0 +1,113 @@
+﻿[
+  {
+    "id": 1,
+    "title": "All about something",
+    "author": {
+      "id": 1,
+      "givenName": "Dan Victor",
+      "surName": "Rusu",
+      "dateOfBirth": "1970-01-01T00:00Z",
+      "bio": "Something about this author. Bla bla bla..."
+    },
+    "publisher": "Me",
+    "edition": "First",
+    "ISBN": "000000000000000",
+    "publishingDate": "1990-01-01T00:00Z",
+    "chapters": [
+      {
+        "title": "First One",
+        "startPage": 1,
+        "numberOfPages": 10
+      },
+      {
+        "title": "Second One",
+        "startPage": 11,
+        "numberOfPages": 10
+      },
+      {
+        "title": "Third One",
+        "startPage": 21,
+        "numberOfPages": 10
+      },
+      {
+        "title": "The End",
+        "startPage": 31,
+        "numberOfPages": 10
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "The art of being Laszlo",
+    "author": {
+      "id": 2,
+      "givenName": "Laszlo",
+      "surName": "Toth",
+      "dateOfBirth": "1970-01-01T00:00Z",
+      "bio": "Something about this author. Bla bla bla..."
+    },
+    "publisher": "You",
+    "edition": "First",
+    "ISBN": "000000000000000",
+    "publishingDate": "1992-01-01T00:00Z",
+    "chapters": [
+      {
+        "title": "First One",
+        "startPage": 1,
+        "numberOfPages": 10
+      },
+      {
+        "title": "Second One",
+        "startPage": 11,
+        "numberOfPages": 10
+      },
+      {
+        "title": "Third One",
+        "startPage": 21,
+        "numberOfPages": 10
+      },
+      {
+        "title": "The End",
+        "startPage": 31,
+        "numberOfPages": 10
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "10 Things You Really Don't Need To Know!!!!",
+    "author": {
+      "id": 3,
+      "givenName": "Eelco",
+      "surName": "Osseweijer",
+      "dateOfBirth": "1970-01-01T00:00Z",
+      "bio": "Something about this author. Bla bla bla..."
+    },
+    "publisher": "Us",
+    "edition": "First",
+    "ISBN": "000000000000000",
+    "publishingDate": "1993-01-01T00:00Z",
+    "chapters": [
+      {
+        "title": "First One",
+        "startPage": 1,
+        "numberOfPages": 10
+      },
+      {
+        "title": "Second One",
+        "startPage": 11,
+        "numberOfPages": 10
+      },
+      {
+        "title": "Third One",
+        "startPage": 21,
+        "numberOfPages": 10
+      },
+      {
+        "title": "The End",
+        "startPage": 31,
+        "numberOfPages": 10
+      }
+    ]
+  }
+]

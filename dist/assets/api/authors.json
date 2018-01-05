@@ -1,0 +1,23 @@
+﻿[
+  {
+    "id": 1,
+    "givenName": "Dan Victor",
+    "surName": "Rusu",
+    "dateOfBirth": "1970-01-01T00:00Z",
+    "bio": "Something about this author. Blablabla..."
+  },
+  {
+    "id": 2,
+    "givenName": "Laszlo",
+    "surName": "Toth",
+    "dateOfBirth": "1970-01-01T00:00Z",
+    "bio": "Something about this author. Blablabla..."
+  },
+  {
+    "id": 3,
+    "givenName": "Eelco",
+    "surName": "Osseweijer",
+    "dateOfBirth": "1970-01-01T00:00Z",
+    "bio": "Something about this author. Blablabla..."
+  }
+]
